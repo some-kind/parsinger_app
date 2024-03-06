@@ -11,9 +11,8 @@ def parsing(log: str):
     """
     parsed_data = {}
     for command in log.split("$"):
-        # command|(res_id,res_type,datetime,load);(res_id,res_type,datetime,load);(res_id,res_type,datetime,load)
+
         resources = command.split("|")[-1]
-        # (res_id,res_type,datetime,load);(res_id,res_type,datetime,load);(res_id,res_type,datetime,load)
 
         example_res_id = resources.split(";")[0].strip("()").split(",")[0]
         example_mes_type = resources.split(";")[0].strip("()").split(",")[1]
