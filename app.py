@@ -1,3 +1,5 @@
+import requests
+
 from parsing import Command
 from parsing import Resource
 from parsing import Measure
@@ -107,9 +109,13 @@ def report_to_file(dict_data: dict):
 
 
 def main():
-    log = input()
-    parsed_data = parsing(log)
-    report_to_file(parsed_data)
+    logs_number = input("Введите число: ")
+    try:
+        log = requests.get(url="http://127.0.0.1:21122/monitoring/infrastructure/using/summary/" + logs_number)
+        parsed_data = parsing(log.text)
+        report_to_file(parsed_data)
+    except requests.ConnectTimeout:
+        print("Приложение недоступно, запустите monitoring_module.py")
 
 
 if __name__ == '__main__':

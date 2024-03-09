@@ -10,8 +10,8 @@ The reports have the following structure:
 - the file name is the command
 - next, the file is a table of the name (ID) of the resource, measuring its impact on a particular system and conclusions about what to do with this process.
 
-To transfer these logs to the program, use the command "curl localhost:21122/monitoring/infrastructure/using/summary/1 | python3 app.py"
-The number at the end can be changed to get different results.
+Run the parsing program with the command "python3 app.py"
+You will be asked to enter a number on which the dataset will depend (just a randomizer seed)
 
 #######  RUSSIAN  ########
 
@@ -27,8 +27,8 @@ The number at the end can be changed to get different results.
 - имя файла - это команда
 - далее файл представляет собой таблицу с названием (ID) ресурса, измеряющую его влияние на конкретную систему и выводы о том, что делать с этим процессом.
 
-Чтобы перенести эти логи в программу, используйте команду "curl localhost:21122/monitoring/infrastructure/using/summary/1 | python3 app.py"
-Число в конце можно изменить, чтобы получить другие результаты.
+Запускаем программу парсинга командой "python3 app.py"
+Вас попросят ввести число, от которого будет зависеть набор данных (просто сид для рандомайзера)
 
 
 ---------------------------------------------------------------------------------------------------------------
